@@ -1,0 +1,49 @@
+.submit-container{
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.submit-container h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.submit-container p{
+    text-align: center;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+.submit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submit-form input,
+.submit-form textarea{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.submit-form textarea{
+    min-height: 120px;
+}
+
+.submit-btn{
+    background:#2f855a;
+    color:white;
+    border:none;
+    padding:12px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+.submit-btn:hover{
+    background: #276749;
+}

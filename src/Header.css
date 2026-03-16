@@ -1,0 +1,134 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    z-index: 1000;
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    width: 90%;
+    margin: auto;
+}
+
+.logo{
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e88e5;
+    cursor: pointer;
+}
+
+.nav-links{
+    display:flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+}
+.nav-links a{
+    text-decoration: none;
+    color: inherit;
+}
+.nav-links li{
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links li::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background:#1e88e5 ;
+    transition: 0.3s ease;
+}
+
+.nav-links li:hover:after{
+    width: 100%;
+}
+
+.nav-links li.active {
+  color: #1e88e5;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input{
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.search-box input:focus{
+    border-color: #1e88e5;
+}
+
+.search-box button{
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    background: #1e88e5;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover{
+    background: #1565c0;
+}
+
+.right-section{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.state-dropdown{
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.login-btn{
+    margin-left: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius:5px;
+    color: white;
+    background-color: #1e88e5;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover{
+    background:#1869b0 ;
+}
+
+.state-dropdown:hover,
+.state-dropdown:focus {
+  border-color: #1e88e5;
+}
+
+@media (max-width: 768px){
+    .nav-links{
+        display: none;
+    }
+}
