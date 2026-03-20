@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
-import Search from './Components/Search';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -56,7 +55,6 @@ function Header(){
             params.set('search',search)
         }
 
-        // navigate(`/explore?state=${value}`)
         navigate(`/explore?state=${params.toString()}`)
     }
 
