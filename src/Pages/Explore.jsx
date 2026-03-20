@@ -12,7 +12,7 @@ function Explore(){
   const navigate = useNavigate();
 
   const selectedState = query.get("state")
-  const searchTerm = query.get("search")
+  const searchTerm = query.get("search") || ""
 
   const [gems,setGems] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -74,10 +74,11 @@ function Explore(){
     )
    }
 
-   if(searchTerm){
-    filteredPlaces = filteredPlaces.filter(
-      place => place.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-    )
+   if(searchTerm !==""){
+    filteredPlaces = filteredPlaces.filter(place=>{
+      const name = (place.name || place.place || "")
+      return name.toLowerCase().includes(searchTerm.toLowerCase()) 
+    })
    }
 
    if(filter !== "All"){
@@ -90,8 +91,6 @@ function Explore(){
   //filtered gems
   const filteredGems = 
      selectedCategory ==="all" ?gems:gems.filter(gem=>gem.category.toLowerCase()===selectedCategory)
-
-
      return(
       <>
           <div className="explore-page">

@@ -33,16 +33,31 @@ function Header(){
             params.set("state",state)
         }
        
-        if(search.trim() === "") return;
+        if(search.trim() !== ""){
+            params.set('search',search.trim())
+        }
+
+        if(params.toString() === "") return;
         
-        params.set("Search",search)
+        params.set("search",search)
         navigate(`/explore?${params.toString()}`)
     }
 
     const handleState= (e)=>{
         const value = e.target.value;
         setState(value);
-        navigate(`/explore?state=${value}`)
+        const params = new URLSearchParams();
+
+        if(value && value !=="All"){
+            params.set('state',value)
+        }
+
+        if(search.trim() !==""){
+            params.set('search',search)
+        }
+
+        // navigate(`/explore?state=${value}`)
+        navigate(`/explore?state=${params.toString()}`)
     }
 
     const navItems = [
