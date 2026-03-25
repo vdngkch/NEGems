@@ -141,6 +141,14 @@ function Submit(){
             placeholder="Enter location"
             required/>
 
+            <label>State</label>
+            <input
+            type="text"
+            name="state"
+            onChange={handleChange}
+            placeholder="Enter state"
+            required/>
+
             <label>Description</label>
              <input
             name="description"
