@@ -27,6 +27,7 @@ function Submit(){
         place:"",
         category:"",
         description:"",
+        state:"",
         tips:"",
         images:[],
         video: null,
@@ -65,6 +66,11 @@ function Submit(){
 
         SetMarker({lat,lng})
 
+        if(!formData.lat || !formData.lng){
+            alert("Please select location on the map!");
+            return;
+        }
+
         setFormData((prev)=>({
             ...prev,
             lat,
@@ -80,7 +86,7 @@ function Submit(){
 
         if(formData.images.length===0){
             alert("please upload an image")
-            return;
+            return [];
         }
 
         const uploadedImages=[]
@@ -114,10 +120,11 @@ function Submit(){
 
         await addDoc(collection(db,"gems"),{
             place:formData.place,
-            category:formData.category,
+            category:formData.category.toLowerCase(),
             description:formData.description,
+            state:formData.state.toLowerCase(),
             tips:formData.tips,
-            images:imageURLs,
+            images:imageURLs || [],
             lat:formData.lat,
             lng:formData.lng
         })
